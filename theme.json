@@ -1,0 +1,12 @@
+{
+    "id": "universe",
+    "name": "Universe",
+    "description": "Thème sur le market de azuriom, créer par rom1.",
+    "version": "1.0.1",
+    "url": "",
+    "authors": [
+        "rom1",
+        "MrMicky"
+    ],
+    "apiId": 27
+}
