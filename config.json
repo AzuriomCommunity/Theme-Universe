@@ -11,11 +11,5 @@
             "name": "Link 2",
             "value": "https://azuriom.com"
         }
-    ],
-    "footer_social_twitter": "https://twitter.com/Azuriom",
-    "footer_social_discord": "https://azuriom.com/discord",
-    "footer_social_steam": "https://steamcommunity.com",
-    "footer_social_youtube": "https://youtube.com",
-    "footer_social_teamspeak": null,
-    "footer_social_instagram": null
+    ]
 }

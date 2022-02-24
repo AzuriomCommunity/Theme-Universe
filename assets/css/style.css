@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -24,6 +25,15 @@ h1 {
     color: #8e249b;
 }
 
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a,
 a:hover,
 h1,
@@ -37,8 +47,9 @@ h1,
 .progress-bar,
 .list-group-item.active,
 .dropdown-item.active,
+.dropdown-item.active,
 .dropdown-item:active,
-.custom-control-input:checked ~ .custom-control-label::before {
+.form-check-input:checked ~ .form-check-label::before {
     background-color: #7c3485 !important;
 }
 
@@ -53,20 +64,24 @@ h1,
     border-color: #592660 !important;
 }
 
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
 .form-control,
-.custom-select,
+.form-select,
 .input-group .input-group-text,
 .input-group .btn {
     border-radius: 0;
 }
 
 .list-group-item.active,
-.custom-control-input:checked ~ .custom-control-label::before {
+.form-check-input:checked ~ .form-check-label::before {
     border-color: #7c3485;
 }
 
 .form-control,
-.custom-select,
+.form-select,
 .table {
     background-clip: inherit;
     color: #fff;
@@ -75,15 +90,21 @@ h1,
 }
 
 .form-control:focus,
-.custom-select:focus {
+.form-select:focus,
+.accordion-button:not(.collapsed) {
     color: #fff;
     background: #292537;
     border-color: #7c3485 !important;
 }
 
+.accordion-button:not(.collapsed) {
+    border: 1px solid #7c3485;
+    background: #4D2052;
+}
+
 .btn,
 .form-control:focus,
-.custom-control-input:focus ~ .custom-control-label::before {
+.form-check-input:focus ~ .form-check-label::before {
     box-shadow: none !important;
 }
 
@@ -99,13 +120,16 @@ h1,
 
 .card,
 .list-group-item,
+.accordion-item,
+.accordion-button,
 .breadcrumb {
     border: 0;
     color: #fff;
     background: #272333;
 }
 
-.card-header {
+.card-header,
+.accordion-button {
     background-color: rgba(100, 100, 100, .25);
 }
 
@@ -235,4 +259,37 @@ hr {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #4D2052;
+}
+
+
+/* EasyMDE */
+.editor-toolbar {
+    background: #4D2052 !important;
+}
+
+.editor-toolbar .fa {
+    color: #aaa;
+}
+
+.editor-toolbar.fullscreen::before,
+.editor-toolbar.fullscreen::after {
+    display: none;
+}
+
+.editor-toolbar .separator {
+    border-right: 1px solid #ccc;
+}
+
+.editor-toolbar button.active,
+.editor-toolbar button:hover {
+    background: #292537!important;
+}
+
+.cm-s-easymde, .editor-preview {
+    color: #fff!important;
+    background: #292537!important;
+}
+
+.cm-s-easymde .CodeMirror-cursor {
+    border-left: 1px solid #fff!important;
 }

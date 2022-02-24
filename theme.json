@@ -1,12 +1,12 @@
 {
     "id": "universe",
     "name": "Universe",
-    "description": "Thème sur le market de azuriom, créer par rom1.",
-    "version": "1.0.1",
-    "url": "",
+    "description": "A modern dark theme for Azuriom.",
+    "version": "1.1.0",
+    "url": "https://market.azuriom.com/resources/27",
     "authors": [
-        "rom1",
-        "MrMicky"
+        "rom1"
     ],
+    "azuriom_api": "1.0.0",
     "apiId": 27
 }

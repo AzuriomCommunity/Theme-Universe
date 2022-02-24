@@ -15,13 +15,4 @@ return [
         'description' => 'Home description',
         'footer_links' => 'Footer links',
     ],
-
-    'social' => [
-        'twitter' => 'Twitter',
-        'youtube' => 'YouTube',
-        'discord' => 'Discord',
-        'steam' => 'Steam',
-        'teamspeak' => 'TeamSpeak',
-        'instagram' => 'Instagram',
-    ],
 ];
