@@ -30,7 +30,7 @@
                 <div class="footer-right d-grid">
                     @foreach(social_links() as $link)
                         <a href="{{ $link->value }}" target="_blank" rel="noreferrer noopener" class="btn btn-primary mb-2">
-                            <i class="{{ $link->icon }} fa-2x fa-fw"></i> {{ $link->title  }}
+                            <i class="{{ $link->icon }} me-1"></i> {{ $link->title  }}
                         </a>
                     @endforeach
                 </div>

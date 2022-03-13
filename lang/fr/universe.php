@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'copyright' => 'Thème fait avec <i class="footer-heart fas fa-heart"></i> par rom1.',
+    'copyright' => 'Thème fait avec <i class="footer-heart bi bi-heart-fill"></i> par rom1.',
 
     'news' => 'News',
 
