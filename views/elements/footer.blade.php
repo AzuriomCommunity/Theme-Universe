@@ -3,7 +3,7 @@
         <div class="row text-center">
             <div class="col-lg-3 col-sm-4 col-xs-12">
                 <a href="{{ route('home') }}">
-                    <img src="{{ site_logo() }}" alt="" {{ site_name() }} class="img-fluid mb-3">
+                    <img src="{{ site_logo() }}" alt="{{ site_name() }}" class="img-fluid mb-3">
                 </a>
             </div>
 

@@ -11,7 +11,7 @@ return [
 
     'config' => [
         'title' => 'Home title',
-        'subtitle' => 'Home title',
+        'subtitle' => 'Home subtitle',
         'description' => 'Home description',
         'footer_links' => 'Footer links',
     ],

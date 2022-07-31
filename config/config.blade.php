@@ -52,26 +52,28 @@
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
 
-                <div class="mb-3">
-                    <label for="titleInput">{{ trans('theme::universe.config.title') }}</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="titleInput" name="title" value="{{ old('title', theme_config('title')) }}">
+                <div class="row g-3">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label" for="titleInput">{{ trans('theme::universe.config.title') }}</label>
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="titleInput" name="title" value="{{ old('title', theme_config('title')) }}">
 
-                    @error('title')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
+                        @error('title')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label" for="subtitleInput">{{ trans('theme::universe.config.subtitle') }}</label>
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="subtitleInput" name="subtitle" value="{{ old('subtitle', theme_config('subtitle')) }}">
+
+                        @error('subtitle')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="subtitleInput">{{ trans('theme::universe.config.subtitle') }}</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="subtitleInput" name="subtitle" value="{{ old('subtitle', theme_config('subtitle')) }}">
-
-                    @error('subtitle')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="descriptionInput">{{ trans('theme::universe.config.description') }}</label>
+                    <label class="form-label" for="descriptionInput">{{ trans('theme::universe.config.description') }}</label>
                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="descriptionInput" name="description" value="{{ old('description', theme_config('description')) }}">
 
                     @error('description')
@@ -79,7 +81,7 @@
                     @enderror
                 </div>
 
-                <label>{{ trans('theme::universe.config.footer_links') }}</label>
+                <label class="form-label">{{ trans('theme::universe.config.footer_links') }}</label>
 
                 <div id="links">
 
