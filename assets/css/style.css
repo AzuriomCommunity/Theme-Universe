@@ -1,9 +1,7 @@
 :root,
 [data-bs-theme=light],
 [data-bs-theme=dark] {
-    --bs-border-width: 0;
     --bs-border-radius: 0;
-    --bs-border-color: var(--bs-primary);
 }
 
 html,
@@ -68,6 +66,6 @@ a {
 /* Footer */
 .footer-links li:not(:last-child) {
     margin-bottom: 0.75rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    border-bottom: 1px dashed rgba(var(--bs-body-color-rgb), 0.4);
     padding-bottom: 0.75rem;
 }
