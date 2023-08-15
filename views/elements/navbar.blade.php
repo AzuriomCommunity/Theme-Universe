@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-3">
+<nav class="navbar navbar-expand-lg py-3">
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="{{ trans('messages.nav.toggle') }}">
             <span class="navbar-toggler-icon"></span>
@@ -12,8 +12,8 @@
             <ul class="navbar-nav">
                 @foreach($navbar as $element)
                     @if(!$element->isDropdown())
-                        <li class="nav-item @if($element->isCurrent()) active @endif">
-                            <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener noreferrer" @endif>
+                        <li class="nav-item">
+                            <a class="nav-link @if($element->isCurrent()) active @endif" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener noreferrer" @endif>
                                 {{ $element->name }}
                             </a>
                         </li>
@@ -32,6 +32,8 @@
                         </li>
                     @endif
                 @endforeach
+
+                @include('elements.theme-selector', ['defaultDark' => true])
 
                 @auth
                     @include('elements.notifications')

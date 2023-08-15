@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('description', setting('description', ''))">
-    <meta name="theme-color" content="#3490DC">
+    <meta name="theme-color" content="{{ theme_config('color', '#7c3485') }}">
     <meta name="author" content="Azuriom">
 
     <meta property="og:title" content="@yield('title')">
@@ -37,13 +37,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/style.css') }}" rel="stylesheet">
     @stack('styles')
+    @include('elements.theme-color', ['color' => $color = theme_config('color', '#7c3485')])
+    <style>
+        :root,
+        [data-bs-theme=light] {
+            --bs-secondary-bg: {{ color_mix('#e9ecef', $color, 0.95) }};
+            --bs-secondary-bg-rgb: {{ color_rgb(color_mix('#e9ecef', $color, 0.95)) }};
+        }
+
+        [data-bs-theme=dark] {
+            --bs-body-bg: {{ color_mix('#212529', $color, 0.88) }};
+            --bs-body-bg-rgb: {{ color_rgb(color_mix('#212529', $color, 0.88)) }};
+            --bs-secondary-bg: {{ color_mix('#131517', $color, 0.91) }};
+            --bs-secondary-bg-rgb: {{ color_rgb(color_mix('#131517', $color, 0.91)) }};
+        }
+    </style>
 </head>
 
-<body>
+<body @if(dark_theme(true)) data-bs-theme="dark" @endif>
 <div id="app">
-    <header>
+    <header class="text-body bg-body" data-bs-theme="dark">
         @include('elements.navbar')
     </header>
 

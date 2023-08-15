@@ -4,10 +4,10 @@
 
 @section('app')
     <header style="background: url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') center / cover no-repeat">
-        <div class="container text-center py-5">
+        <div class="container text-body text-center py-5" data-bs-theme="dark">
             <div class="row gy-3 align-items-center justify-content-center">
                 <div class="col-md-6">
-                    <h1 class="mb-0 text-uppercase">{{ theme_config('title') }}</h1>
+                    <h1 class="mb-0 text-primary text-uppercase">{{ theme_config('title') }}</h1>
 
                     <h2 class="text-uppercase">{{ theme_config('subtitle') }}</h2>
 
@@ -51,7 +51,7 @@
         @if(! $servers->isEmpty())
             <h3 class="text-uppercase">{{ trans('messages.servers') }}</h3>
 
-            <hr>
+            <hr class="title-separator">
 
             <div class="row gy-3 justify-content-center mb-5">
                 @foreach($servers as $server)
@@ -75,7 +75,7 @@
                                     </p>
                                 @else
                                     <p>
-                                        <span class="badge bg-danger text-white">
+                                        <span class="badge text-bg-danger">
                                             {{ trans('messages.server.offline') }}
                                         </span>
                                     </p>
@@ -97,19 +97,17 @@
 
         <h3 class="text-uppercase">{{ trans('theme::universe.news') }}</h3>
 
-        <hr>
+        <hr class="title-separator">
 
         <div class="row gy-3">
             @foreach($posts as $post)
                 <div class="col-md-4">
-                    <a href="{{ route('posts.show', $post) }}" class="text-white">
+                    <a href="{{ route('posts.show', $post) }}">
                         @if($post->hasImage())
                             <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="img-fluid">
                         @endif
 
-                        <div class="text-uppercase py-2" style="background: #272333">
-                            <h3 class="mb-0">{{ $post->title }}</h3>
-                        </div>
+                        <h3 class="bg-body text-uppercase py-2 mb-0">{{ $post->title }}</h3>
                     </a>
                 </div>
             @endforeach

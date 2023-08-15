@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer mt-auto bg-body pt-5 pb-2">
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-3 col-sm-4 col-xs-12">
@@ -8,9 +8,9 @@
             </div>
 
             <div class="offset-lg-1 col-sm-4 col-xs-12">
-                <div class="widget-title mb-3">
-                    <h3>{{ trans('theme::universe.links') }}</h3>
-                </div>
+                <h3 class="h4 text-center">
+                    {{ trans('theme::universe.links') }}
+                </h3>
 
                 <ul class="footer-links list-unstyled">
                     @foreach(theme_config('footer_links') ?? [] as $link)
@@ -22,10 +22,10 @@
             </div>
 
             <div class="col-sm-4 col-xs-12">
-                <div class="widget-title">
-                    <h3 class="mb-2">{{ trans('theme::universe.socials') }}</h3>
-                    <p>{{ trans('theme::universe.socials_info') }}</p>
-                </div>
+                <h3 class="h4 text-center mb-2">
+                    {{ trans('theme::universe.socials') }}
+                </h3>
+                <p>{{ trans('theme::universe.socials_info') }}</p>
 
                 <div class="footer-right d-grid">
                     @foreach(social_links() as $link)

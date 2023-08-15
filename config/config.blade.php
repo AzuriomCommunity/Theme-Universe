@@ -1,6 +1,8 @@
 @extends('admin.layouts.admin')
 
-@section('footer_description', 'Theme config')
+@section('title', 'Universe config')
+
+@include('admin.elements.color-picker')
 
 @push('footer-scripts')
     <script>
@@ -51,6 +53,15 @@
         <div class="card-body">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST" id="configForm">
                 @csrf
+
+                <div class="mb-3">
+                    <label class="form-label" for="colorInput">{{ trans('messages.fields.color') }}</label>
+                    <input type="color" class="form-control form-control-color color-picker @error('color') is-invalid @enderror" id="colorInput" name="color" value="{{ old('color', theme_config('color', '#7c3485')) }}" required>
+
+                    @error('color')
+                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                    @enderror
+                </div>
 
                 <div class="row g-3">
                     <div class="col-md-6 mb-3">
